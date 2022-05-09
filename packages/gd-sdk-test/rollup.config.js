@@ -1,8 +1,10 @@
-// import typescript from '@rollup/plugin-typescript';
-import typescript from 'rollup-plugin-typescript2'
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import resolve  from '@rollup/plugin-node-resolve'
-import json from '@rollup/plugin-json'
+import {nodeResolve}  from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
+import commonjs from '@rollup/plugin-commonjs';
+import eslint from '@rollup/plugin-eslint';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 // import pkg from './package.json';
 
@@ -17,19 +19,35 @@ export default {
     {
       dir: 'dist',
       format: 'esm',
-      sourcemap: false,
+      sourcemap: true,
     },
   ],
+  context: "window",
   plugins: [
-    resolve(),
+    eslint(),
     json({
       compact: true
     }),
+    nodeResolve({
+      jsnext: true,
+      main: true,
+      browser: true,
+      preferBuiltins: false
+    }),
+    commonjs(),
     typescript({ 
       tsconfig: './tsconfig.json', 
-      exclude: 'node_modules/**',
-      useTsconfigDeclarationDir: true
+      exclude: 'node_modules/*',
+      useTsconfigDeclarationDir: true,
+      module: "esnext",
+      clean: true,
     }),
-    terser()
+    nodePolyfills({
+      crypto: true,
+      stream: true,
+      https: true,
+      http: true,
+      os: true
+    }),
   ]
 };

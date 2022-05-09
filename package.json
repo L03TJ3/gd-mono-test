@@ -12,16 +12,16 @@
   "license": "GPL-3.0",
   "homepage": "",
   "scripts": {
-    "test": "yarn workspace @gd-base-ui-test/base-ui test",
-    "build": "yarn workspace @gd-base-ui-test/base-ui build",
-    "dev": "yarn workspace @gd-base-ui-test/base-ui dev",
-    "format": "prettier --write \"./**/*.{ts,js,json,md}\""
+    "build": "yarn workspaces foreach run build",
+    "compile": "tsc -p tsconfig.build.json"
   },
   "devDependencies": {
     "check-dependency-version-consistency": "^3.0.0",
-    "module-alias": "^2.2.2",
     "prettier": "2.3.2",
     "typescript": "^4.6.3"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.0",
+  "resolutions": {
+    "@ethersproject/**/bignumber": "5.5.0"
+  }
 }

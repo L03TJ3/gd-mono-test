@@ -183,9 +183,6 @@ declare const gdTheme: {
                 };
                 _disabled: {
                     opacity: string;
-                    _interactionBox: {
-                        bg: string;
-                    };
                     _icon: {
                         bg: string;
                     };
@@ -193,25 +190,13 @@ declare const gdTheme: {
                         opacity: string;
                     };
                 };
-                _focus: {
-                    _interactionBox: {
-                        bg: string;
-                        p: string;
-                    };
-                };
                 _focusVisible: {
-                    _interactionBox: {
-                        bg: string;
-                        p: string;
-                    };
-                };
-                _interactionBox: {
-                    borderRadius: string;
-                    position: string;
-                    zIndex: number;
                     _web: {
-                        transition: string;
-                        pointerEvents: string;
+                        style: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
                     };
                 };
             };
@@ -220,18 +205,12 @@ declare const gdTheme: {
                     _icon: {
                         size: number;
                     };
-                    _interactionBox: {
-                        size: number;
-                    };
                     _text: {
                         fontSize: string;
                     };
                 };
                 md: {
                     _icon: {
-                        size: number;
-                    };
-                    _interactionBox: {
                         size: number;
                     };
                     _text: {
@@ -321,14 +300,16 @@ declare const gdTheme: {
                     p: string;
                 };
                 _webSelect: {
-                    appearance: string;
-                    WebkitAppearance: string;
-                    MozAppearance: string;
-                    position: string;
-                    width: string;
-                    height: string;
-                    opacity: number;
-                    zIndex: number;
+                    style: {
+                        appearance: string;
+                        WebkitAppearance: string;
+                        MozAppearance: string;
+                        position: string;
+                        width: string;
+                        height: string;
+                        opacity: number;
+                        zIndex: number;
+                    };
                 };
                 _web: {
                     pointerEvents: string;
@@ -414,16 +395,80 @@ declare const gdTheme: {
                 alignItems: string;
                 justifyContent: string;
                 scaleOnPressed: number;
+                _interactionBox: {
+                    position: string;
+                    borderRadius: string;
+                    zIndex: number;
+                };
+                _stack: {
+                    direction: string;
+                    alignItems: string;
+                    justifyContent: string;
+                    space: number;
+                };
                 _light: {
                     bg: string;
+                    _hover: {
+                        _web: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
+                    };
+                    _focus: {
+                        _web: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
+                    };
+                    _pressed: {
+                        _interactionBox: {
+                            borderWidth: string;
+                            borderColor: string;
+                        };
+                    };
                 };
                 _dark: {
                     bg: string;
+                    _hover: {
+                        _web: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
+                    };
+                    _focus: {
+                        _web: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
+                    };
+                    _pressed: {
+                        _interactionBox: {
+                            borderWidth: string;
+                            borderColor: string;
+                        };
+                    };
                 };
-                shadow: number;
+                _web: {
+                    cursor: string;
+                };
             };
             defaultProps: {
                 colorScheme: string;
+            };
+            sizes: {
+                lg: {
+                    _interactionBox: string;
+                };
+                md: {
+                    _interactionBox: string;
+                };
+                sm: {
+                    _interactionBox: string;
+                };
             };
         };
         SliderTrack: {
@@ -469,15 +514,24 @@ declare const gdTheme: {
             sizes: {
                 lg: {
                     thumbSize: number;
-                    sliderSize: number;
+                    sliderTrackHeight: number;
+                    _interactionBox: {
+                        p: string;
+                    };
                 };
                 md: {
                     thumbSize: number;
-                    sliderSize: number;
+                    sliderTrackHeight: number;
+                    _interactionBox: {
+                        p: string;
+                    };
                 };
                 sm: {
                     thumbSize: number;
-                    sliderSize: number;
+                    sliderTrackHeight: number;
+                    _interactionBox: {
+                        p: string;
+                    };
                 };
             };
         };
@@ -937,9 +991,8 @@ declare const gdTheme: {
             baseStyle: {
                 multiline: boolean;
                 p: string;
-                totalLines: number;
-                h: number | undefined;
                 textAlignVertical: string;
+                h: string;
             };
             defaultProps: {
                 size: string;
@@ -1130,7 +1183,6 @@ declare const gdTheme: {
         };
         PopoverHeader: {
             baseStyle: () => {
-                shadow: string;
                 _web: {
                     accessibilityRole: string;
                 };
@@ -1898,6 +1950,11 @@ declare const gdTheme: {
                             textDecorationLine: string;
                         };
                     };
+                    _pressed: {
+                        _text: {
+                            textDecorationLine: string;
+                        };
+                    };
                     _light: {
                         _text: {
                             color: string;
@@ -2147,26 +2204,16 @@ declare const gdTheme: {
                 _text: {
                     ml: number;
                 };
-                _focus: {
-                    _interactionBox: {
-                        bg: string;
-                        size: number;
-                    };
-                };
                 _focusVisible: {
-                    _interactionBox: {
-                        bg: string;
-                        size: number;
+                    _web: {
+                        style: {
+                            outlineWidth: string;
+                            outlineColor: any;
+                            outlineStyle: string;
+                        };
                     };
-                };
-                _interactionBox: {
-                    position: string;
-                    borderRadius: string;
                 };
                 _disabled: {
-                    _interactionBox: {
-                        bg: string;
-                    };
                     _web: {
                         cursor: string;
                     };
@@ -2821,6 +2868,7 @@ declare const gdTheme: {
                     bg: string;
                     flex: number;
                     w: string;
+                    h: string;
                 };
                 _light: {
                     placeholderTextColor: string;
@@ -3007,16 +3055,6 @@ declare const gdTheme: {
                 };
                 unstyled: () => {
                     borderWidth: string;
-                    _light: {
-                        _focus: {
-                            placeholderTextColor: string;
-                        };
-                    };
-                    _dark: {
-                        _focus: {
-                            placeholderTextColor: string;
-                        };
-                    };
                     _focus: {
                         bg: string;
                     };
@@ -3241,6 +3279,9 @@ declare const gdTheme: {
                             color: string;
                         };
                     };
+                    _hover: {
+                        bg: string;
+                    };
                     _focus: {
                         bg: string;
                     };
@@ -3249,6 +3290,15 @@ declare const gdTheme: {
                     };
                     _icon: {
                         color: string;
+                    };
+                    _focusVisible: {
+                        _web: {
+                            outlineWidth: string;
+                            style: {
+                                boxShadow: string;
+                            };
+                            bg: string;
+                        };
                     };
                 };
                 _dark: {
@@ -3260,6 +3310,9 @@ declare const gdTheme: {
                             color: string;
                         };
                     };
+                    _hover: {
+                        bg: string;
+                    };
                     _focus: {
                         bg: string;
                     };
@@ -3268,6 +3321,15 @@ declare const gdTheme: {
                     };
                     _icon: {
                         color: string;
+                    };
+                };
+                _focusVisible: {
+                    _web: {
+                        outlineWidth: string;
+                        style: {
+                            boxShadow: string;
+                        };
+                        bg: string;
                     };
                 };
                 _checked: {

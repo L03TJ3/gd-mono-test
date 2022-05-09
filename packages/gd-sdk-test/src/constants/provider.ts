@@ -1,7 +1,6 @@
-import { ethers } from 'ethers'
-import { BaseProvider } from '@ethersproject/providers/src.ts/base-provider'
-import { JsonRpcProvider } from '@ethersproject/providers/src.ts/json-rpc-provider'
-import { Web3Provider } from '@ethersproject/providers/src.ts/web3-provider'
+import { BaseProvider, Web3Provider, JsonRpcProvider } from '@ethersproject/providers'
+
+import { dnsEncode } from '@ethersproject/hash'
 
 import { NETWORK_LABELS, SupportedChainId } from './chains'
 import { RPC } from '../hooks/useEnvWeb3'

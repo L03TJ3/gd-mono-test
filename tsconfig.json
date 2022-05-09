@@ -1,26 +1,12 @@
 {
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "downlevelIteration": true,
-    "jsx": "react"
+    "baseUrl": "./packages",
+    "paths": {
+      "@gd-test-repo/base-ui": ["gd-base-ui-test/src"],
+      "@gd-test-repo/sdk": ["gd-sdk-test/src"],
+      "@gd-test-repo/*": ["*/src"],
+    },
+    "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["node_modules"],
-  "include": ["packages/**/*"],
 }

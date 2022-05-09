@@ -441,7 +441,7 @@ export async function getMetaReverse(
 
     const DAI = (await getToken(chainId, 'DAI')) as Token
 
-    let inputAmount: CurrencyAmount<Currency> = CurrencyAmount.fromRawAmount(TO, decimalToJSBI(toAmount, TO.decimals))
+    const inputAmount: CurrencyAmount<Currency> = CurrencyAmount.fromRawAmount(TO, decimalToJSBI(toAmount, TO.decimals))
 
     let result
     if (chainId === SupportedChainId.FUSE) {
@@ -554,7 +554,7 @@ export async function sell(
         const { input, minReturn, minCDai } = prepareValues(meta)
 
         // Convert into addresses
-        let route: string[] = meta.route.map(token => token.address)
+        const route: string[] = meta.route.map(token => token.address)
 
         const req = contract.methods
             .sell(

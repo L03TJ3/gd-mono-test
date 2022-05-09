@@ -1,5 +1,6 @@
 import Web3 from 'web3'
-import { BigNumber, ethers } from 'ethers'
+import { ethers } from 'ethers'
+import { BigNumber } from '@ethersproject/bignumber'
 import {
     Currency,
     CurrencyAmount,
@@ -473,7 +474,7 @@ export async function getMetaReverse(
         throw new UnsupportedToken(fromSymbol)
     }
 
-    let inputAmount: CurrencyAmount<Currency> = CurrencyAmount.fromRawAmount(G$, decimalToJSBI(toAmount, G$.decimals))
+    const inputAmount: CurrencyAmount<Currency> = CurrencyAmount.fromRawAmount(G$, decimalToJSBI(toAmount, G$.decimals))
 
     let result
     if (chainId === SupportedChainId.FUSE) {

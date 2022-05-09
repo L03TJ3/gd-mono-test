@@ -1,0 +1,1 @@
+{"version":3,"file":"SimpleStakingContract.d.ts","sourceRoot":"","sources":["../../../src/contracts/SimpleStakingContract.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,MAAM,CAAA;AAOvB;;;;;GAKG;AACH,wBAAgB,qBAAqB,CAAC,IAAI,EAAE,IAAI,EAAE,OAAO,EAAE,MAAM,wCAEhE;AAED;;;;GAIG;AACH,wBAAsB,iCAAiC,CAAC,IAAI,EAAE,IAAI,GAAG,OAAO,CAAC,MAAM,EAAE,CAAC,CAcrF"}

@@ -10,7 +10,7 @@ export const formatFromBalance = (value: BigNumber | undefined, decimals = 18): 
         return ''
     }
 }
-export const formatToBalance = (value: string | undefined, decimals = 18) => {
+export const formatToBalance = (value: string | undefined, decimals = 18): {value: BigNumber, decimals: number} => {
     if (value) {
         return { value: ethers.utils.parseUnits(Number(value).toFixed(decimals), decimals), decimals: decimals }
     } else {
@@ -36,7 +36,7 @@ export const formatBalance = (value: BigNumberish, decimals = 18, maxFraction = 
     return formatted
 }
 
-export const parseBalance = (value: string, decimals = 18) => {
+export const parseBalance = (value: string, decimals = 18): BigNumber => {
     return ethers.utils.parseUnits(value || '0', decimals)
 }
 

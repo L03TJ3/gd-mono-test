@@ -1,9 +1,23 @@
-/// <reference path="./bignumber.d.ts" />
-/// <reference path="./global.d.ts"/>
+export {}
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { Zero } from '@ethersproject/constants'
 import { parseUnits } from '@ethersproject/units'
 import Fraction from 'entities/Fraction'
+
+
+declare module '@ethersproject/bignumber' {
+  export interface BigNumber {
+      muldiv(multiplier: BigNumberish, divisor: BigNumberish): BigNumber
+      toFixed(decimals: BigNumberish): string
+      toFraction(decimals: BigNumberish, base: BigNumberish): Fraction
+  }
+}
+
+declare global {
+  export interface String {
+      toBigNumber(decimals: number): BigNumber
+  }
+}
 
 String.prototype.toBigNumber = function(decimals: BigNumberish): BigNumber {
     try {

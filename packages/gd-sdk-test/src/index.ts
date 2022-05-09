@@ -1,5 +1,6 @@
-// import export everything
-import './bootstrap'
-import * as GdCoreSDK from './core'
+export * from './bootstrap'
+export * from './core'
+export * from './entities'
+export * from './utils'
 
-export default { GdCoreSDK }
+
