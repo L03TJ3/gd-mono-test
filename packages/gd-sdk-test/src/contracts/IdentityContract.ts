@@ -2,8 +2,8 @@ import Web3 from 'web3'
 import { AbiItem } from 'web3-utils'
 import Identity from '@gooddollar/goodprotocol/artifacts/contracts/Interfaces.sol/IIdentity.json'
 
-import { G$ContractAddresses } from '../constants/addresses'
-import { getChainId } from '../utils/web3'
+import { G$ContractAddresses } from 'constants/addresses'
+import { getChainId } from 'utils/web3'
 
 /**
  * Returns instance of IdentityContract contract.

@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import { AbiItem } from "web3-utils";
 
-import CDAIAbi from "../abi/CDAI.json";
+import CDAIAbi from "abi/CDAI.json";
 
 /**
  * Returns instance of compound contract.

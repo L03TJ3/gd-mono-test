@@ -2,10 +2,10 @@ import Web3 from 'web3'
 import { AbiItem } from 'web3-utils'
 import UBIScheme from '@gooddollar/goodprotocol/artifacts/contracts/ubi/UBIScheme.sol/UBIScheme.json'
 
-import { G$ContractAddresses } from '../constants/addresses'
-import { getChainId } from '../utils/web3'
-import { SupportedChainId } from '../constants/chains'
-import { UnsupportedChainId } from '../utils/errors'
+import { G$ContractAddresses } from 'constants/addresses'
+import { getChainId } from 'utils/web3'
+import { SupportedChainId } from 'constants/chains'
+import { UnsupportedChainId } from 'utils/errors'
 
 /**
  * Returns instance of UBIScheme contract.

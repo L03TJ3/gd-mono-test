@@ -1,0 +1,1 @@
+{"version":3,"file":"GovernanceStakingContract.d.ts","sourceRoot":"","sources":["../../src/contracts/GovernanceStakingContract.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,MAAM,CAAA;AAYvB;;;;;GAKG;AACH,wBAAgB,yBAAyB,CAAC,IAAI,EAAE,IAAI,EAAE,OAAO,CAAC,EAAE,MAAM,wCAIrE;AAED,wBAAsB,6BAA6B,IAAG,OAAO,CAAC;IAAC,OAAO,EAAC,MAAM,CAAC;IAAC,OAAO,EAAE,MAAM,CAAA;CAAC,EAAE,CAAC,CAQjG"}

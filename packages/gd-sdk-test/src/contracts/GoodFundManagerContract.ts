@@ -2,8 +2,8 @@ import Web3 from "web3";
 import { AbiItem } from "web3-utils";
 import GoodFundManager from "@gooddollar/goodprotocol/artifacts/contracts/staking/GoodFundManager.sol/GoodFundManager.json";
 
-import { G$ContractAddresses } from "../constants/addresses";
-import { getChainId } from "../utils/web3";
+import { G$ContractAddresses } from "constants/addresses";
+import { getChainId } from "utils/web3";
 
 /**
  * Returns instance of GoodFundManager contract.

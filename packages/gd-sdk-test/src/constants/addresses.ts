@@ -1,13 +1,13 @@
-import React, {useContext} from 'react'
 import { FACTORY_ADDRESS as V2_FACTORY_ADDRESS, INIT_CODE_HASH } from '@uniswap/v2-sdk'
 import contractsAddresses, { ObjectLike } from '@gooddollar/goodprotocol/releases/deployment.json'
 
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 import { SupportedChainId } from './chains'
-import GdSdkContext from 'hooks/useGdSdkContext'
 
 export const getNetworkEnv = (network?: string): string => {
-    return localStorage.getItem('GD_NETWORK') || network || 'staging'
+  const localNetwork = localStorage.getItem('GD_NETWORK')
+  const parsed = localNetwork ? JSON.parse(localNetwork) : null
+  return parsed || network || 'staging'
 }
 
 type AddressMap = { [chainId: number]: string }

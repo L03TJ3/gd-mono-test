@@ -35,6 +35,7 @@ export default {
       preferBuiltins: false
     }),
     commonjs(),
+    terser(),
     typescript({ 
       tsconfig: './tsconfig.json', 
       exclude: 'node_modules/*',

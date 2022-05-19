@@ -4,10 +4,10 @@ import { Eth } from 'web3-eth'
 import { AbiItem } from 'web3-utils'
 import GovernanceStaking from '@gooddollar/goodprotocol/artifacts/contracts/governance/GovernanceStaking.sol/GovernanceStaking.json'
 
-import { G$ContractAddresses } from '../constants/addresses'
-import { getChainId } from '../utils/web3'
-import { SupportedChainId } from '../constants/chains'
-import { UnsupportedChainId } from '../utils/errors'
+import { G$ContractAddresses } from 'constants/addresses'
+import { getChainId } from 'utils/web3'
+import { SupportedChainId } from 'constants/chains'
+import { UnsupportedChainId } from 'utils/errors'
 import { Ether } from '@uniswap/sdk-core'
 
 /**

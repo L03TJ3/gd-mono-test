@@ -21,7 +21,6 @@ export const allCommonPairs = memoize<(chainId: SupportedChainId, currencyA?: Cu
     // Only pass along valid pairs, non-duplicated pairs.
 
     delayedCacheClear(allCommonPairs)
-
     return Object.values(
       allPairs
         // Filter out invalid pairs.
@@ -32,5 +31,7 @@ export const allCommonPairs = memoize<(chainId: SupportedChainId, currencyA?: Cu
           return memo
         }, {})
     )
+
+
   }, (...args: any[]) => args[0] + args[1].symbol + args[2].symbol
 )

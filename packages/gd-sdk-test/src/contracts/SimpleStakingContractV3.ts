@@ -2,11 +2,11 @@ import Web3 from 'web3'
 import { AbiItem } from 'web3-utils'
 import SimpleStakingV2 from '@gooddollar/goodprotocol/artifacts/contracts/staking/SimpleStakingV2.sol/SimpleStakingV2.json'
 import contractsAddresses from '@gooddollar/goodprotocol/releases/deploy-settings.json'
-import { SupportedChainId } from '../constants/chains'
+import { SupportedChainId } from 'constants/chains'
 
-import { G$ContractAddresses, getNetworkEnv } from '../constants/addresses'
-import { getChainId } from '../utils/web3'
-import { LIQUIDITY_PROTOCOL } from '../constants/protocols'
+import { G$ContractAddresses, getNetworkEnv } from 'constants/addresses'
+import { getChainId } from 'utils/web3'
+import { LIQUIDITY_PROTOCOL } from 'constants/protocols'
 
 /**
  * Returns instance of SimpleStaking contract.
@@ -76,6 +76,7 @@ export async function getSimpleStakingContractAddressesV3(web3: Web3): Promise<s
 
       return all
     } catch(error) {
+      console.log('getSimpleStakingConractV3 -->', error)
       return [{release: '', addresses: ['']}]
     }
 }

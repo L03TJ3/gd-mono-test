@@ -3,8 +3,8 @@ import { AbiItem } from "web3-utils";
 import GoodMarketMaker
   from "@gooddollar/goodprotocol/artifacts/contracts/reserve/GoodMarketMaker.sol/GoodMarketMaker.json";
 
-import { G$ContractAddresses } from "../constants/addresses";
-import { getChainId } from "../utils/web3";
+import { G$ContractAddresses } from "constants/addresses";
+import { getChainId } from "utils/web3";
 
 /**
  * Returns instance of GoodMarket contract.

@@ -2,9 +2,9 @@ import Web3 from "web3"
 import { AbiItem } from "web3-utils"
 import { Contract } from "web3-eth-contract"
 
-import CDAIAbi from "../abi/CDAI.json"
-import { getChainId } from "../utils/web3"
-import { G$ContractAddresses } from "../constants/addresses"
+import CDAIAbi from "abi/CDAI.json"
+import { getChainId } from "utils/web3"
+import { G$ContractAddresses } from "constants/addresses"
 
 /**
  * Returns instance of CDAI contract.

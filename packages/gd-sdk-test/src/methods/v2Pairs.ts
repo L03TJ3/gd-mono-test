@@ -26,6 +26,7 @@ export enum PairState {
  * @param {Array<[Currency, Currency]>} currencies Result of method allCurrencyCombinations(...).
  * @returns {Promise<[PairState, Pair | null][]>} List of pairs that can be used for currencies exchange.
  */
+
 export async function v2Pairs(chainId: SupportedChainId, currencies: Array<[Currency, Currency]>): Promise<[PairState, Pair | null][]> {
   const tokens = currencies.map(([currencyA, currencyB]) => [currencyA.wrapped, currencyB.wrapped])
 
@@ -50,6 +51,7 @@ export async function v2Pairs(chainId: SupportedChainId, currencies: Array<[Curr
         const data = await PairContract(chainId, address).getReserves()
         const [tokenA, tokenB] = pairAddresses.get(address)!
         resolve({ ...data, tokenA, tokenB })
+        resolve({tokenA, tokenB})
       } catch (e) {
         reject(e)
       }

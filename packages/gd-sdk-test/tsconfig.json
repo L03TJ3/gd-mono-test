@@ -1,8 +1,21 @@
 {
+  "include": [
+    "src/**/*.ts",
+    "./types/", 
+    "src/**/*.json",
+    "src/**/*.tsx",
+    "src/*.d.ts",
+    "src/**/*.d.ts",
+  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "module": "esnext",
+    "baseUrl": "./src",
+    "paths": {
+      "@gd-test-repo/sdk/core": ["./core"]
+    },
+    "rootDir": "src",
+    "outDir": "dist",
     "target": "es5",
-    "sourceMap": true,
     "lib": [
       "es2015",
       "es5",
@@ -10,17 +23,16 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "module": "esnext",
+    "skipLibCheck": false,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
+    "types": ["jest", "node", "bn.js"],
+    "typeRoots": ["./node_modules/@types", "./types", "../../node_modules/@types"],
+    "allowJs": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "downlevelIteration": true,
     "jsx": "react",
     "alwaysStrict": true,
@@ -29,15 +41,11 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "types": ["jest", "node", "bn.js"],
-    "typeRoots": ["./node_modules/@types", "./types", "./src/*", "../../node_modules/@types"],
     "declaration": true,
+    "emitDeclarationOnly": true,
     "declarationMap": true,
-    "declarationDir": "dist/types/",
-    "paths": {"*": ["./src/*"]},
-    "outDir": "./dist",
-    "rootDir": "./src",
-  },
-  "include": ["./src/**/*", "./src/**/*.d.ts", "./types"],
-  "exclude": ["node_modules"]
+    "sourceMap": true,
+    "composite": true,
+    "strict": true,
+  }
 }
